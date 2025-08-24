@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "highlight-saver",
+  "version": "1.0",
+  "description": "A simple tool to highlight and save text locally from any webpage.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+        "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
